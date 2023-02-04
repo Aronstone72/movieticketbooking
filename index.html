@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inox</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --card-height: 520px;
+            --card-width: 500px;
+        }
+        #summary{
+            width: var(--card-width);
+            height: var(--card-height);
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            /* align-items: flex-end; */
+            padding: 0 36px;
+            perspective: 2500px;
+            margin: 0 50px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            
+        }
+        #poster{
+            border-color: 2px red;
+            border-radius: 5px;
+            margin: 5px;
+            margin-left: 60px;
+            margin-top: 30px;
+        }
+        #bsmmry{
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        dt{
+            align-items: flex-end;
+            color: white;
+            width: 150px;
+            border-radius: 2px;
+            margin-left: 80px;
+            padding: 5px;
+        }
+        dd{
+            color: white;
+            width: 190px;
+            border-radius: 2px;
+            margin-left: 20px;
+            margin-bottom: 2px;
+            padding: 5px;
+            
+        }
+        #info{
+            align-items: center;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            margin-top: 30px;
+            
+        }
+        /* #print{
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 10fr 6fr;
+        } */
+
+        /* #print h2 {
+            color: black;
+            font-family: arial;
+            text-align: end;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        } */
+        #print button{ 
+            width: 80px;
+            background-color: black;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        #print{
+            align-items: center;
+            margin-top: 25%;
+        }
+        #print h2 {
+            font-family: arial;
+            font-weight: 700;
+            margin-left: 25px;
+        }
+        #print button {
+            margin-left: 37%;
+        }
+        #pgdevide{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+    </style>
+    
+    <script type="text/javascript" src="src/ticket.js"></script>
+    
+</head>
+<div></div>
+<body class="container-fluid">
+    <div id="toolBar" class="mt-3 d-flex justify-content-between bg-dark p-2">
+        <div>
+            <select class="form-select" id="Movie">
+                <option>Select Movie</option>
+                <option>Avatar : Way of Water</option>
+                <option>Pathaan</option>
+            </select>
+        </div>
+        <div>
+            <select class="form-select" id="Cinema">
+                <option>Select Cinema</option>
+                <option>GVK B'Hills</option>
+                <option>GVK Ameerpet</option>
+            </select>
+        </div>
+        <div>
+            <select class="form-select" id="Date">
+                <option>Select Date</option>
+                <option>Today 1-Feb</option>
+                <option>Tomorrow 2-Feb</option>
+            </select>
+        </div>
+        <div>
+            <select class="form-select" id="Timing">
+                <option>Select Timing</option>
+                <option>10:30 AM</option>
+                <option>07:30 PM</option>
+            </select>
+        </div>
+        <div>
+            <select class="form-select" id="Seats">
+                <option>Select Seats</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="BookClick()" class="btn  w-100 btn-danger">Book</button>
+        </div>
+    </div>
+    
+    <div id="pgdevide">
+        <div id="summary" class="mt-3" style="display: none; align-items: center;">
+            <dl style="width:250px">
+                <h3 class="bg-white text-dark p-1" id="bsmmry">Booking Summary</h3>
+                
+                    <img id="poster" width="300px" height="200px">
+                
+    
+                <div id="info">
+                    <dt>Movie Name :</dt>
+                    <dd id="lblMovie"></dd>
+                    <dt>Cinema :</dt>
+                    <dd id="lblCinema"></dd>
+                    <dt>Date :</dt>
+                    <dd id="lblDate"></dd>
+                    <dt>Timing :</dt>
+                    <dd id="lblTiming"></dd>
+                    <dt>Seats :</dt>
+                    <dd id="lblSeats"></dd>
+                </div>
+            </dl>
+        </div>
+    
+        <div id="print">
+            <h2>Click to Print Button to Print Page</h2> <br>
+            <button onclick="PrintPage()"><span class="btn btn-danger">Print</span></button>
+        </div>
+    </div>
+    
+</body>
+</html>
